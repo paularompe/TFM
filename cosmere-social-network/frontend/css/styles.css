@@ -1,0 +1,334 @@
+:root {
+    --color-fondo: linear-gradient(to bottom, #1e1e2f, #2c2c54), url('../assets/images/fondo-estrellas.jpg');
+    --color-texto: #f4f4f4;
+    --color-primario: #ffd700;
+    --color-secundario: #ff8c00;
+    --color-secundario-hover: #ff6700;
+    --color-oscuro: #121212;
+    --color-medio: rgba(255, 255, 255, 0.1);
+    --color-sombra: rgba(0, 0, 0, 0.2);
+    --borde-radios: 10px;
+}
+
+/* Fondo y cuerpo */
+body {
+    background: var(--color-fondo) no-repeat center center fixed;
+    background-size: cover;
+    color: var(--color-texto);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Elementos básicos */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: var(--color-oscuro);
+    background: var(--color-primario);
+    border: none;
+    border-radius: var(--borde-radios);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: var(--color-secundario-hover);
+}
+
+/* Header */
+header {
+background-color: #1f1f1f;
+padding: 1rem;
+text-align: center;
+color: var(--color-texto);
+box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+header h1 {
+font-size: 2rem;
+color: var(--color-primario);
+}
+
+header nav ul {
+list-style: none;
+display: flex;
+justify-content: center;
+gap: 20px;
+padding: 0;
+margin: 1rem 0 0 0;
+}
+
+header nav ul li a {
+text-decoration: none;
+color: var(--color-texto);
+font-weight: bold;
+padding: 0.5rem 1rem;
+border-radius: var(--borde-radios);
+transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.activo {
+background-color: var(--color-primario);
+color: var(--color-oscuro);
+}
+
+nav ul .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1f1f1f;
+    list-style: none;
+    padding: 0.5rem 0;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+nav ul .submenu li {
+    padding: 0.5rem 1rem;
+}
+
+nav ul .submenu li a {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul .submenu li a:hover {
+    background: #ffd700;
+    color: #121212;
+    border-radius: 3px;
+}
+
+/* Footer */
+footer {
+    background: #1f1f1f;
+    color: var(--color-texto);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Contenedor principal */
+.inicio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sección de introducción */
+.inicio-intro {
+    text-align: center;
+    background: var(--color-medio);
+    padding: 20px;
+    border-radius: var(--borde-radios);
+    box-shadow: 0 4px 8px var(--color-sombra);
+}
+
+.inicio-intro h2 {
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.inicio-intro p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-comenzar {
+    display: inline-block;
+    background: var(--color-secundario);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: var(--borde-radios);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-comenzar:hover {
+    background: var(--color-secundario-hover);
+    transform: scale(1.05);
+}
+
+/* Estadísticas globales */
+.estadisticas-globales {
+    display: flex; /* Activa flexbox */
+    justify-content: space-around; /* Espacia uniformemente las secciones */
+    align-items: stretch; /* Asegura que todos los elementos tengan la misma altura */
+    gap: 20px; /* Espacio entre los bloques */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--borde-radios);
+    box-shadow: 0 4px 8px var(--color-sombra);
+    margin: 20px auto;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.estadistica {
+    flex: 1; /* Asegura que los bloques ocupen el mismo ancho */
+    max-width: 300px; /* Tamaño máximo de cada sección */
+    background: #1f1f1f;
+    padding: 15px;
+    border-radius: var(--borde-radios);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex; /* Activa flexbox dentro del bloque */
+    flex-direction: column; /* Apila el contenido verticalmente */
+    justify-content: space-between; /* Distribuye el contenido */
+    min-height: 200px; /* Altura mínima uniforme */
+}
+
+.estadistica h4 {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.estadistica span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+    margin: 10px 0;
+}
+
+.estadistica p {
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+/* Sección destacados */
+.destacados {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente dentro del contenedor */
+    gap: 20px; /* Espacio entre los destacados */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--borde-radios);
+    box-shadow: 0 4px 8px var(--color-sombra);
+    margin: 20px auto;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.destacado {
+    flex: 1; /* Permite que los elementos se distribuyan uniformemente */
+    max-width: 400px; /* Ancho máximo para cada destacado */
+    background: #1f1f1f;
+    padding: 15px;
+    border-radius: var(--borde-radios);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.destacado h4 {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.destacado p {
+    margin-bottom: 20px;
+    color: var(--color-texto);
+}
+
+.destacado .btn {
+    background: var(--color-secundario);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--borde-radios);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.destacado .btn:hover {
+    background: var(--color-secundario-hover);
+    transform: scale(1.05);
+}
+
+/* Testimonios */
+.testimonios {
+    margin-top: 40px;
+    text-align: center;
+    background: var(--color-medio);
+    padding: 20px;
+    border-radius: var(--borde-radios);
+}
+
+.testimonio blockquote {
+    font-size: 1.2rem;
+    color: var(--color-texto);
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.testimonio p {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+/* Call to Action */
+.cta-login {
+    text-align: center;
+    background: var(--color-medio);
+    padding: 20px;
+    border-radius: var(--borde-radios);
+    margin-top: 40px;
+}
+
+.cta-login .btn-registro {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-login .btn-registro:hover {
+    background: #218838;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .estadisticas-globales {
+        grid-template-columns: 1fr;
+    }
+
+    .destacado {
+        max-width: 100%;
+    }
+}

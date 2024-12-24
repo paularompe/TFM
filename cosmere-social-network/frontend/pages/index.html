@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmere Social Network</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cosmere Social Network</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="activo">Inicio</a></li>
+                <li><a href="./pages/guias.html">Guías</a></li>
+                <li><a href="./pages/teorias.html">Teorías</a></li>
+                <li><a href="./pages/perfil.html">Perfil</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <main class="inicio-container">
+        <section class="inicio-intro">
+            <h2>Bienvenido al Universo del Cosmere</h2>
+            <p>Conecta con otros fans, comparte teorías y explora los mundos de Brandon Sanderson.</p>
+            <a href="./pages/teorias.html" class="btn-comenzar">Comenzar</a>
+        </section>
+    
+        <section class="estadisticas-globales">
+            <div class="estadistica">
+                <h4>Mundos Descubiertos</h4>
+                <span id="mundos-descubiertos">0</span>
+                <p>Total de mundos explorados por los usuarios.</p>
+            </div>
+            <div class="estadistica">
+                <h4>Libros Leídos</h4>
+                <span id="libros-leidos">0</span>
+                <p>Total de libros marcados como leídos.</p>
+            </div>
+            <div class="estadistica">
+                <h4>Insignias Obtenidas</h4>
+                <span id="insignias-obtenidas">0</span>
+                <p>Total de insignias desbloqueadas por los usuarios.</p>
+            </div>
+        </section>        
+    
+        <section class="destacados">
+            <div class="destacado">
+                <h4>Teoría Popular</h4>
+                <p>Explora la teoría más debatida entre los fans del Cosmere.</p>
+                <a href="./pages/teorias.html" class="btn">Leer más</a>
+            </div>
+            <div class="destacado">
+                <h4>Guía Recomendada</h4>
+                <p>Descubre nuestra guía destacada para principiantes en el Cosmere.</p>
+                <a href="./pages/guias.html" class="btn">Ver guía</a>
+            </div>
+        </section>       
+    
+        <section class="cta-login">
+            <h3>Únete a la Aventura</h3>
+            <p>Regístrate ahora y comienza tu viaje por el Cosmere.</p>
+            <a href="./pages/registro.html" id="registro-link" class="btn-registro">Regístrate</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cosmere Social Network</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/inicio.js"></script>
+</body>
+</html>

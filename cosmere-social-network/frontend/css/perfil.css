@@ -1,0 +1,188 @@
+/* Fondo y texto */
+body {
+    background: var(--color-fondo) no-repeat center center fixed;
+    background-size: cover;
+    color: var(--color-texto);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-texto);
+    box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--color-primario);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: var(--borde-radios);
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.activo {
+    background-color: var(--color-primario);
+    color: var(--color-oscuro);
+}
+
+/* Contenedor Principal */
+.perfil-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Columna Izquierda */
+.perfil-info {
+    flex: 1;
+    max-width: 300px;
+    background: var(--color-medio);
+    padding: 20px;
+    border-radius: var(--borde-radios);
+    box-shadow: 0 4px 8px var(--color-sombra);
+    text-align: center;
+}
+
+.perfil-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.perfil-info h2 {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.perfil-info .perfil-biografia {
+    font-size: 1rem;
+    color: var(--color-texto);
+    margin-bottom: 10px;
+}
+
+.perfil-info button {
+    background: var(--color-secundario);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.perfil-info button:hover {
+    background: var(--color-secundario-hover);
+}
+
+/* Columna Derecha */
+.perfil-detalles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    flex: 2;
+}
+
+/* Secciones del Perfil */
+.perfil-seccion {
+    background: var(--color-medio);
+    padding: 15px;
+    border-radius: var(--borde-radios);
+    box-shadow: 0 4px 8px var(--color-sombra);
+}
+
+.perfil-seccion h3 {
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.perfil-seccion ul li {
+    padding: 5px;
+    margin: 5px 0;
+    border-bottom: 1px solid #444;
+    color: var(--color-texto);
+}
+
+/* Insignias */
+.perfil-insignias ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.perfil-insignias ul li {
+    background: var(--color-primario);
+    color: var(--color-oscuro);
+    padding: 10px;
+    border-radius: var(--borde-radios);
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px var(--color-sombra);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .perfil-container {
+        flex-direction: column;
+    }
+
+    .perfil-info,
+    .perfil-detalles {
+        max-width: 100%;
+    }
+}
+
+.btn-cerrar-sesion {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #c9302c;
+}

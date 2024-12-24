@@ -1,0 +1,230 @@
+/* Fondo y texto */
+body {
+    background: var(--color-fondo) no-repeat center center fixed;
+    background-size: cover;
+    color: var(--color-texto);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Header */
+header {
+background-color: #1f1f1f;
+padding: 1rem;
+text-align: center;
+color: var(--color-texto);
+box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+header h1 {
+font-size: 2rem;
+color: var(--color-primario);
+}
+
+header nav ul {
+list-style: none;
+display: flex;
+justify-content: center;
+gap: 20px;
+padding: 0;
+margin: 1rem 0 0 0;
+}
+
+header nav ul li a {
+text-decoration: none;
+color: var(--color-texto);
+font-weight: bold;
+padding: 0.5rem 1rem;
+border-radius: var(--borde-radios);
+transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.activo {
+background-color: var(--color-primario);
+color: var(--color-oscuro);
+}
+
+/* General para teorías */
+.teorias {
+    max-width: 800px;
+    margin: 20px auto; /* Centra la sección en la página */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #f4f4f4;
+}
+
+/* Cabecera de la sección */
+.teorias header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.teorias h1 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin: 0;
+}
+
+#nueva-teoria-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#nueva-teoria-btn:hover {
+    background: #218838;
+}
+
+/* Contenedor para la lista de teorías */
+#lista-teorias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.teoria-item {
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.teoria-item h2 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.teoria-item p {
+    margin: 10px 0;
+    color: #f4f4f4;
+}
+
+.teoria-item .acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.teoria-item button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.teoria-item button:hover {
+    background: #0056b3;
+}
+
+/* Submenú */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+nav ul .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1f1f1f;
+    list-style: none;
+    padding: 0.5rem 0;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+nav ul .submenu li {
+    padding: 0.5rem 1rem;
+}
+
+nav ul .submenu li a {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul .submenu li a:hover {
+    background: #ffd700;
+    color: #121212;
+    border-radius: 3px;
+}
+
+/* Ajuste para comentarios */
+.comentarios-contenedor {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.comentarios-contenedor.oculto {
+    display: none;
+}
+
+.comentario-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.comentario-item p {
+    margin: 0;
+}
+
+.comentario-item small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #ccc;
+}

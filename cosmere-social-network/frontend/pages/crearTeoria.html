@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Nueva Teoría</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/crearTeoria.css">
+</head>
+<body>
+    <header>
+        <h1>Publicar Nueva Teoría</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="teorias.html">Teorías</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="crear-teoria-container">
+        <div class="formulario-contenedor">
+            <h2>Crear una nueva teoría</h2>
+            <form id="crear-teoria-form" action="http://localhost:3000/api/crearTeorias" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="titulo">Título de la teoría</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Título de la teoría" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="descripcion">Descripción de la teoría</label>
+                    <textarea id="descripcion" name="descripcion" placeholder="Descripción de la teoría" required></textarea>
+                </div>
+            
+                <div class="form-group">
+                    <label for="etiquetas">Selecciona etiquetas</label>
+                    <select id="etiquetas" name="etiquetas[]" multiple required>
+                        <option value="Roshar">Roshar</option>
+                        <option value="Scadrial">Scadrial</option>
+                        <option value="Nalthis">Nalthis</option>
+                        <option value="Sel">Sel</option>
+                        <option value="Taldain">Taldain</option>
+                        <option value="Hoid">Hoid</option>
+                        <option value="Magia">Magia</option>
+                        <option value="Teoría">Teoría</option>
+                    </select>
+                    <small>Usa Ctrl (Windows) o Cmd (Mac) para seleccionar múltiples etiquetas</small>
+                </div>
+            
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" id="imagen" name="imagen">
+                </div>
+            
+                <button type="submit" class="btn-publicar">Publicar Teoría</button>
+            </form>            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cosmere Social Network</p>
+    </footer>
+    <script src="../js/crearTeoria.js"></script>
+</body>
+</html>
